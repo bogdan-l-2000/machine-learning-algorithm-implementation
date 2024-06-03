@@ -63,8 +63,6 @@ for i in range(2000) :
     sig += dsig
     p = np.append(p, [[mu,sig]], axis=0)
 
-print(p)
-
 plt.plot(xdata, GaussianFunction(xdata, mu, sig), 'g-',
          label='steepest_step')
 

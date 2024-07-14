@@ -3,19 +3,22 @@ import matplotlib.pyplot as plt
 import scipy.optimize
 import random
 
+
 # This is the Gaussian function.
 # I am using this function from the online "Mathematics for Machine Learning: Multivariate Calculus" course offered by Imperial College London on Coursera
-def GaussianFunction (x,mu,sig) :
+def GaussianFunction(x, mu, sig):
     return np.exp(-(x-mu)**2/(2*sig**2)) / np.sqrt(2*np.pi) / sig
+
 
 # Next up, the derivative with respect to μ.
 # Note that the derivative calls the original function due to the derivative of e^x being equal to e^x
-def GaussianDerivativeMu (x,mu,sig) :
+def GaussianDerivativeMu(x, mu, sig):
     return GaussianFunction(x, mu, sig) * ((x - mu) / (sig ** 2))
+
 
 # Finally in this cell, the derivative with respect to σ.
 # Same idea as for mu
-def GaussianDerivativeSig (x,mu,sig) :
+def GaussianDerivativeSig(x, mu, sig):
     return GaussianFunction(x, mu, sig) * ((-1/sig) + (((x-mu)**2) / (sig ** 3)))
 
 
